@@ -1,0 +1,24 @@
+import axios from 'axios';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
+const instance = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+// request interceptor to attach token if present
+instance.interceptors.request.use(config => {
+  const stored = localStorage.getItem('dq_user');
+  if (stored) {
+    const user = JSON.parse(stored);
+    if (user?.token) {
+      config.headers.Authorization = `Bearer ${user.token}`;
+    }
+  }
+  return config;
+});
+
+export default instance;

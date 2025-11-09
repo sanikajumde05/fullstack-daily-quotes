@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f8;
+  color: #222;
+}
+.app { max-width: 900px; margin: 0 auto; }
+.nav {
+  display:flex;
+  gap:12px;
+  padding:12px;
+  background:#fff;
+  align-items:center;
+  border-bottom:1px solid #e6e6e6;
+}
+.nav a { text-decoration:none; color:#0077cc; }
+.auth-card {
+  background: #fff; padding: 20px; margin: 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.auth-card input { display:block; width:100%; padding:8px; margin:8px 0; }
+.auth-card button { padding:8px 12px; }
+.quote {
+  background: #fff; padding: 20px; border-left: 6px solid #0077cc; border-radius: 4px;
+}
+.error { color: red; }

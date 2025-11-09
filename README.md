@@ -50,27 +50,48 @@ This project is built as a part of a Full Stack Web Development learning journey
 ## 📁 Folder Structure
 
 daily-quotes/
+fullstack-auth-app/
 │
-├── backend/ # Node.js + Express + MongoDB API
-│ ├── models/ # Mongoose schemas
-│ ├── routes/ # API Routes (Auth, Quotes)
-│ ├── controllers/ # Request Handlers
-│ ├── middleware/ # Auth Middleware (JWT)
-│ ├── utils/ # Helper functions
-│ ├── config/ # DB Connection
-│ └── server.js
+├── backend/
+│   ├── package.json
+│   ├── server.js
+│   ├── .env
+│   ├── config/
+│   │   └── db.js                # Database connection
+│   ├── models/
+│   │   └── User.js              # User schema/model
+│   ├── routes/
+│   │   └── authRoutes.js        # Signup/Login routes
+│   ├── controllers/
+│   │   └── authController.js    # Logic for signup/login
+│   ├── middleware/
+│   │   └── authMiddleware.js    # Verify JWT token
+│   └── utils/
+│       └── generateToken.js     # JWT generation helper
 │
-└── frontend/ # React App
-├── src/
-│ ├── pages/ # Login, Signup, Home
-│ ├── components/ # Protected Route
-│ ├── context/ # Auth Context Provider
-│ └── services/ # Axios Instance
-├── index.html
-└── vite.config.js
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── src/
+│   │   ├── main.jsx
+│   │   ├── App.jsx
+│   │   ├── components/
+│   │   │   └── ProtectedRoute.jsx
+│   │   ├── pages/
+│   │   │   ├── Signup.jsx
+│   │   │   ├── Login.jsx
+│   │   │   └── Home.jsx
+│   │   ├── services/
+│   │   │   └── api.js           # Axios instance
+│   │   └── context/
+│   │       └── AuthContext.jsx  # Manage auth state globally
+│   └── public/
+│       └── index.html
+│
+├── README.md                    # Project overview and setup guide
+└── .gitignore
 
 yaml
-Copy code
 
 ---
 
@@ -97,7 +118,7 @@ npm run dev
 Backend runs at:
 http://localhost:5000
 
-💻 Run the Frontend
+##💻 Run the Frontend
 Open another terminal:
 
 bash
@@ -109,7 +130,7 @@ npm run dev
 Frontend runs at:
 http://localhost:5173
 
-🧪 API Endpoints
+##🧪 API Endpoints
 Method	Endpoint	Description
 POST	/api/auth/signup	Create a new user
 POST	/api/auth/login	Login user & return JWT token
@@ -122,16 +143,16 @@ DELETE	/api/quotes/:id	Delete a user’s quote
 Authorization Header Format:
 
 makefile
-Copy code
 Authorization: Bearer <token>
-📍 Future Enhancements
+
+###📍 Future Enhancements
 🔹 Like & Save Quotes
 🔹 Categories (Happiness, Success, Self-Love, Productivity)
 🔹 “Quote of the Day” Feature for Each User
 🔹 Dark Mode UI
 🔹 Share Quote on WhatsApp / Instagram
 
-👩‍💻 Author
+###👩‍💻 Author
 Sanika Jumde
 B.Tech CSE, 3rd Year
 Symbiosis Institute of Technology
